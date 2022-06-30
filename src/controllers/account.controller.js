@@ -4,7 +4,6 @@ const customers = require('../customers.json')
 
 function verifyIfExistsAccountCPF(request, response, next) {
   const { cpf } = request.headers
-  console.log(cpf);
 
   const customer = customers.find((customer) => customer.cpf === cpf)
 
@@ -23,7 +22,7 @@ const lists = (request, response) => {
 
 const list = (request, response) => {
   const { customer } = request
-  console.log(customer, 'customer');
+
   return response.status(200).json(customer)
 }
 
